@@ -1,0 +1,21 @@
+{
+  "name": "PyTorch GPU DevContainer",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": [
+    "ms-python.python",
+    "ms-toolsai.jupyter"
+  ],
+  "mounts": [
+    "source=${localWorkspaceFolder}/data,target=/workspace/data,type=bind"
+  ],
+  "runArgs": [
+    "--gpus", "all"
+  ],
+  "postCreateCommand": "pip install -r requirements.txt"
+}
+
